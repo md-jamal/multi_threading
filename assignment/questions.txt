@@ -1,0 +1,14 @@
+Exercise 1: 
+	Create a Hello World program using threads
+
+Exercise 2: 
+	Modify exercise 2, to print the thread id of the threads along with the Hello 
+	World message
+
+Exercise 3: 
+	Write a program hellomany.c that will create a number N of threads specified in 
+	the command line, each of which prints out a hello message and its own thread ID
+
+Exercise 4: 
+	Write a program using threads,  where the main thread increments the value 
+	and the child thread decrements the same value
