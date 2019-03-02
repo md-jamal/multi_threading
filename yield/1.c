@@ -1,3 +1,5 @@
+//code demonstrating pthread_yield
+
 #include <stdio.h>
 #include <pthread.h>
 
@@ -10,7 +12,7 @@ void *thread_fn1(void *arg)
  printf("Thread 1 in execution\n");
  for(int i=0; i <100000; i++) {
 	printf("value of i is %d\n", i);
-	if (i == 9999)
+	if (i == 888)
 		pthread_yield();
  }
  printf("Thread 1 in execution\n");
