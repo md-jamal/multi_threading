@@ -1,0 +1,11 @@
+Here, four threads are forked off, and then the main() thread goes into an infinite loop. When you execute it, what do you think you'll see? I can think of two answers. One is that you'll see nothing -- the main() thread spins forever, and the other threads don't run. The second answer is that the main() thread will run, but the other threads will also get the CPU at some point and run to completion.
+
+The underlying issue here is called preemption. If your thread system is preemptive, then although the main thread gets most of the CPU, the thread system interrupts it at certain points (i.e. it preempts the main() thread), and runs the other threads.
+
+POSIX thread systems under Solaris used to be non-preemptive. Under LINUX, they are preemptive.
+
+There are some machines that have multiple CPU's attached to a single memory. These systems are by nature preemptive, since different threads will actually execute on different CPU's. However, whether or not a thread system is preemptive is an attribute that you must discern when you are programming for a thread system.
+
+A non-preemptive thread system on a system with a single CPU (called a "uniprocessor") may seem useless, but in actuality it is extremely useful.
+
+

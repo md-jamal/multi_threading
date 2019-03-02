@@ -1,0 +1,2 @@
+The reason for this is that when the main thread returns, the other four threads have been created, and are either sleeping, or have not executed yet. When the main thread returns, the task is terminated, killing the threads. Thus, they do not print anything.
+If you change the return statement in the main() routine to pthread_exit(), then it does not kill the process, and the four threads run to completion
