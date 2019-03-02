@@ -1,7 +1,7 @@
 //code for 4 thread functions and yield
 #include <stdio.h>
 #include <pthread.h>
-//creating 4 threads
+
 
 pthread_t tid[4];
 
