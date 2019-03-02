@@ -1,3 +1,4 @@
+//code for 4 thread functions and yield
 #include <stdio.h>
 #include <pthread.h>
 
