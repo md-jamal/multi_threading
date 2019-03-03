@@ -1,0 +1,7 @@
+Threads consume resources. In particular, each thread executes on its own stack, which requires memory. When a thread exits, the thread system has to decide whether to release its resources or not. It makes that decision in one of two ways:
+If another thread calls pthread_join() on the thread, then upon completion of the pthread_join() call, the thread's resources are released.
+If any thread (typically the thread itself) calls pthread_detach() on the thread, then no pthread_join() call is required. The thread's resources will be released instantly when the thread exits. More often than not, it is what you want.
+To call pthread_detach() on yourself, you call
+
+pthread_detach(pthread_self());
+
